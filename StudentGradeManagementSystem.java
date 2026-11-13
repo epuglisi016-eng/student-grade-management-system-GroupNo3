@@ -5,17 +5,52 @@ public class StudentGradeManagementSystem {
     //ADD STUDENT AND GRADE
     public static int addStudent(Scanner input, String[] names, int[] grades, int count) {
         //Check if the array is full
-        
+        if (count >= 50) {
+            System.out.println("Maximum number of students reached.");
+            return count;
+        }
+
         //Ask for student name
+        System.out.print("Enter student name: ");
+        String name = input.nextLine();
 
         //Ask for student grade
+        int grade;
+        
+        //Keep asking the user for a grade until a valid grade is entered
+        do {
+            System.out.print("Enter student grade: ");
+            
+            //Check if input is an integer
+            while(!input.hasNextInt()) {
+                System.out.println("Invalid grade! Please enter an integer.");
 
-        //Validate grade input (is an int and between 0-100)
+                //The input field needs the be cleared
+                input.nextLine();
+
+                //Prompt for the grade again
+                System.out.print("Enter student grade: ");
+            }
+
+            grade = input.nextInt();
+            input.nextLine();
+
+            //Check if grade is between 0 and 100
+            if (grade < 0 || grade > 100) {
+                System.out.println("Invalid grade! Please enter an integer between 0 and 100");
+            }
+        } while(grade < 0 || grade > 100);
 
         //Store the student grades in array
-
+        //Count starts at 0, so it can be used to identify where in the array the new student is supposed to go
+        names[count] = name;
+        grades[count] = grade;
         //Increase student count and display successful message
+        count++;
 
+        System.out.println("Student has been added successfully!");
+
+        return count;
     }
 
     //DISPLAY STUDENTS AND GRADES
