@@ -1,6 +1,59 @@
 import java.util.Scanner;
 
 public class StudentGradeManagementSystem {
+
+    //ADD STUDENT AND GRADE
+    public static int addStudent(Scanner input, String[] names, int[] grades, int count) {
+        //Check if the array is full
+        
+        //Ask for student name
+
+        //Ask for student grade
+
+        //Validate grade input (is an int and between 0-100)
+
+        //Store the student grades in array
+
+        //Increase student count and display successful message
+
+    }
+
+    //DISPLAY STUDENTS AND GRADES
+    public static void displayStudents(String[] names, int[] grades, int count) {
+        //Check if there are students
+
+        //Display each students information
+
+
+    }
+    //FIND A STUDENTS GRADE
+    public static void findStudent(Scanner input, String[] names, int[] grades, int count) {
+        //Check if there are students
+
+        //Ask for students name
+
+        //Search for student in the array
+
+        //Display a message if student is not found
+    }
+    //CLASS AVERAGE
+    public static void calculateAverage(int[] grades, int count) {
+        //Check if there are students
+
+        //Add all of the grades together
+
+        //Divide that number by the amount of students within the array
+    }
+    //HIGHEST AND LOWEST GRADES
+    public static void findHighestLowest(String[] names, int[] grades, int count) {
+        //Check if there are students
+
+        //Assume the first student has the highest and lowest grade
+
+        //Compare all of the students in order to find the true highest and lowest
+
+        //Display the highest and lowest grades
+    }
     public static void main(String[] args) {
         //Create scanner object
         Scanner input = new Scanner(System.in);
@@ -38,58 +91,28 @@ public class StudentGradeManagementSystem {
             switch (choice) {
                 case 1: 
                     //ADD STUDENT AND GRADE
-                    //Check if there is room in the arrays
-
-                    //Ask user for student name and grade
-
-                    //Make sure the grade is between 0 and 100(Make them reenter if not)
-
-                    //Store the student information in the array
-
-                    //Increment the student count
-                
+                    //assigns the updated student count from add student back into studentCount in the main method
+                    studentCount = addStudent(input, studentNames, studentGrades, studentCount);
                     break;
 
                 case 2: 
                     //DISPLAY STUDENTS AND GRADES
-
-                    //Make sure the student exists
-
-                    //Loop through the arrays to display all the records
+                    displayStudents(studentNames, studentGrades, studentCount);
                     break;
 
                 case 3:
                     //FIND A STUDENTS GRADE
-
-                    //Ask the user for the students name
-
-                    //Search through the studentNames array
-
-                    //Display grade if student is found
-
-                    //If the student is not found, display a student not found message
-
+                    findStudent(input, studentNames, studentGrades, studentCount);
                     break;
 
                 case 4:
                     //CLASS AVERAGE
-
-                    //Add together all of the grades
-
-                    //Divide the sum by the studentCount
-
-                    //Display the class average
+                    calculateAverage(studentGrades, studentCount);
                     break;
 
                 case 5:
                     //HIGHEST AND LOWEST GRADES
-
-                    //Comapre all of the grades using a loop
-
-                    //Identify the highest and lowest with a loop
-
-                    //Display to the user what the highest and lowest grades are
-
+                    findHighestLowest(studentNames, studentGrades, studentCount);
                     break;
                 
                 case 6:
